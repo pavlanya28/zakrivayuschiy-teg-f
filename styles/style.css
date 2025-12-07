@@ -17,7 +17,7 @@
   justify-self: center;
   text-align: center;
   align-items: center;
-  padding-block: clamp(7.5rem, .3239rem + 0.7512vw, 8rem);
+  padding-block: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
   margin-block: 100px;
   margin-inline: auto;
 }
@@ -50,6 +50,8 @@
   transition: box-shadow 0.3s ease;
   overflow: hidden;
   cursor: pointer;
+  background-color: var(--bg-button, #FFFFFF);
+  text-align: center;
 }
 
 .header__logo {
@@ -164,14 +166,13 @@
 
 .card__button {
   display: flex;
-  gap: 12px;
+  gap: 6px;
   justify-content: flex-end;
   margin-inline-end: 25px;
   margin-block-end: 25px;
 }
 
 .card__icon-button {
-  background-color: transparent;
   block-size: 36px;
   inline-size: 39px;
   padding: 0;
@@ -182,22 +183,18 @@
 }
 
 .card__like-button {
-  background-color: #FFFFFF;
-  cursor: pointer;
   block-size: 38px;
   inline-size: 130px;
-  text-align: center;
 }
 
 .button-dialog {
   line-height: 0.9;
-  background-color: #FFFFFF;
   block-size: 55px;
   inline-size: 335px;
   margin-inline: auto;
   margin-block-start: 50px;
   white-space: nowrap;
-  padding-left: 20px;
+  padding-inline-start: 20px;
 
   display: flex;
   align-items: center;
@@ -208,7 +205,7 @@
 
 
 
-.button:hover::before {
+.button:hover:not(.card__icon-button)::before {
   content: "";
   transform: translateX(0);
   transition: transform 0.5s ease-in-out;
@@ -240,23 +237,21 @@
   align-self: center;
 }
 
-.button:focus {
+.button:focus:not(.card__icon-button) {
   outline: none;
 }
 
-.button:focus-visible {
+.button:focus-visible:not(.card__icon-button) {
   outline: none;
   box-shadow: 2px 2px 0 #000000;
 }
 
 .card__icon-button:focus {
   outline: none;
-
 }
 
 .card__icon-button:focus-visible {
   outline: 2px solid #000000;
-  
 }
 
 .dialog {
@@ -290,7 +285,6 @@
 }
 
 .close-button {
-  background-color: #FFFFFF;
   line-height: 0.9;
   max-block-size: 38px;
   min-inline-size: 293px;
@@ -389,6 +383,7 @@
     align-content: space-between;
     justify-content: center;
     padding-block: 17px;
+    padding-inline: 20px;
   }
   .button-dialog .dialog-icon {
     width: 28;
@@ -398,5 +393,14 @@
   .dialog {
     inline-size: 341px;
     padding: 30px 40px;
+    grid-template-columns: 39px 200px;
+  }
+
+  .dialog__button {
+    min-inline-size: 261px;
+  }
+
+  .close-button {
+    min-inline-size: 261px;
   }
 }
