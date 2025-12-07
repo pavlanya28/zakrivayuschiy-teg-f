@@ -373,11 +373,11 @@
 
 .is-liked .heart {
   transform-origin: center;
-  animation: bigheart 0.3s 0.1s ease-in;
+  animation: fadeIn 0.3s 0.1s ease-in;
 }
 
 .is-liked .sparks {
-  animation: sparks 0.3s 0.3s ease-in;
+  animation: slideInFromLeft 0.3s 0.3s ease-in;
 }
 
 
